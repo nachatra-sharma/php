@@ -42,6 +42,17 @@ for($k = 1; $k <= 10; $k++){
     echo $k . '<br/>';
 }
 
+// foreach 
+$array = [1,2,3,4,5,6,7,8,9,0];
+foreach($array as $item) {
+    echo 'foreach ' . $item . '<br/>';
+}
+
+foreach($array as $key => $value) {
+    echo 'key '. $key .' value '. $value .'<br/>';
+}
+
+
 // ============ break and continue ================
 
 // break
