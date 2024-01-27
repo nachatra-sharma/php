@@ -86,9 +86,10 @@ echo var_dump($fullName);
 echo '<br/>';
 
 // type casting
-function sum(int $first, $second) {
+function sum(int $first, int $second): int {
     return $first + $second;
 }
+
 echo sum(3.5, 3);
 echo '<br/>';
 
@@ -102,6 +103,5 @@ function add(int $x, int $y)
 
 echo add(1, 2);
 echo '<br/>';
-
 
 ?>
