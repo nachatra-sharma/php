@@ -70,3 +70,65 @@ function demo3(int $num1, int $num2): int{
     return $num1 - $num2;
 }
 echo '<br/>' . demo3(num2 : 43, num1 : 3);
+
+echo '<br/>';
+
+// variable scopes
+
+$x = 5; // it is a global variable
+include ('partials/global.php');
+function scope($x){
+    echo $x . '<br/>'; // local variable
+    $x++;
+    echo $x . '<br/>';
+}
+
+echo scope($x);
+echo $x . '<br/>';
+
+// function types 
+
+// variable function
+function multiply($x, $y) {
+    return $x * $y;
+}
+
+$fun = 'multiply';
+
+echo multiply(2, 5) . '<br />';
+
+// anonymous function
+
+$name = function (int $var1, int $var2): int{
+    return $var1 + $var2;
+};
+
+echo $name(2, 6) . '<br/>';
+
+$num = 10;
+
+$greet = function(int|float ...$numbers) use ($num) : int|float{
+    echo $num . '<br />';
+    return array_sum($numbers);
+};
+
+echo $greet(2,3,4,5,6,7,8,9,1);
+
+$arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+$array = array_map(function ($element){
+    return $element * 2;
+}, $arr);
+
+echo '<pre>';
+print_r($array);
+echo '</pre>';
+
+// arrow functions
+
+$arr2 = [1, 2, 3, 4];
+$array2 = array_map(fn($number) => $number * 2, $arr2);
+echo '<pre>';
+print_r($array2);
+echo '</pre>';
+
